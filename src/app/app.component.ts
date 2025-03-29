@@ -51,7 +51,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class AppComponent {
   profileCard = 'Profile Card'
-  name: string | undefined
-  age: number | undefined
-  presentation: string | undefined
+  name: string = 'leonel kanmogne'
+  age: number = 32
+  presentation: string = 'Fullstack developer (java/angular/react)'
 }
