@@ -10,13 +10,19 @@ import { FormsModule } from '@angular/forms';
       <div class="values">
         <div><strong>Name: </strong> {{name}}</div>
         <div><strong>Age: </strong>{{age}}</div>
-        <div><strong>Presentation: </strong>{{presentation}}</div>
+        <div>
+          <p>
+            <strong>Presentation: </strong>{{presentation}}
+          </p>
+        </div>
       </div>
       <div class="data-form">
+        <h4>Update Profile</h4>
         <input type="text" [(ngModel)]="name" placeholder="Your name">
         <input type="number" [(ngModel)]="age" placeholder="Your age">
         <input type="text" [(ngModel)]="presentation" placeholder="Tell us a bit about yourselve">
       </div>
+      <span>🚀 <code>Happy Coding!</code></span>
     </div>
   `,
   styles: `
@@ -41,11 +47,17 @@ import { FormsModule } from '@angular/forms';
       display: flex;
       flex-direction: column;
     }
+    .data-form h4{
+      margin-bottom: 0;
+    }
     .data-form input{
       padding: 8px;
       margin-top: 8px;
       border-radius: 8px;
       border: 1px solid rgb(216, 215, 215);
+    }
+    .profile-card span{
+      margin-top: 16px;
     }
   `,
 })
