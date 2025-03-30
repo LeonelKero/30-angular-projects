@@ -5,9 +5,9 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-root',
   imports: [FormsModule],
   template: `
-    <div class="profile-card">
-      <h1 class="heading">{{profileCard}}</h1>
-      <div class="values">
+    <div class="xs:w-full max-w-md m-auto mt-10 rounded-md p-5 bg-stone-50 drop-shadow-lg">
+      <h1 class="text-3xl text-center text-sky-700 text-grey-100 p-3">{{profileCard}}</h1>
+      <div class="mt-6">
         <div><strong>Name: </strong> {{name}}</div>
         <div><strong>Age: </strong>{{age}}</div>
         <div>
@@ -16,50 +16,16 @@ import { FormsModule } from '@angular/forms';
           </p>
         </div>
       </div>
-      <div class="data-form">
-        <h4>Update Profile</h4>
-        <input type="text" [(ngModel)]="name" placeholder="Your name">
-        <input type="number" [(ngModel)]="age" placeholder="Your age">
-        <input type="text" [(ngModel)]="presentation" placeholder="Tell us a bit about yourselve">
+      <div class="mt-6 flex flex-col">
+        <h4 class="text-xl text-sky-500 font-light mb-2">Update Profile</h4>
+        <input class="border border-slate-300 p-2 my-2 rounded-xl" type="text" [(ngModel)]="name" placeholder="Your name">
+        <input class="border border-slate-300 p-2 my-2 rounded-xl" type="number" [(ngModel)]="age" placeholder="Your age">
+        <input class="border border-slate-300 p-2 mt-2 mb-4 rounded-xl" type="text" [(ngModel)]="presentation" placeholder="Tell us a bit about yourselve">
       </div>
-      <span>🚀 <code>Happy Coding!</code></span>
+      <span class="text-neutral-400">🚀 <code>Happy Coding!</code></span>
     </div>
   `,
-  styles: `
-    .profile-card{
-      max-width: 400px;
-      background: rgb(255, 255, 255);
-      border: 1px solid lightgray;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      padding: 16px;
-      border-radius: 16px;
-      box-shadow: 0 16px 16px rgb(235, 235, 235);
-    }
-    .values div{
-      margin: 16px 0;
-    }
-    .heading{
-      text-align: center;
-    }
-    .data-form{
-      display: flex;
-      flex-direction: column;
-    }
-    .data-form h4{
-      margin-bottom: 0;
-    }
-    .data-form input{
-      padding: 8px;
-      margin-top: 8px;
-      border-radius: 8px;
-      border: 1px solid rgb(216, 215, 215);
-    }
-    .profile-card span{
-      margin-top: 16px;
-    }
-  `,
+  styles: [],
 })
 export class AppComponent {
   profileCard = 'Profile Card'
