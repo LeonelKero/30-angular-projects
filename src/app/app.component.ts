@@ -1,27 +1,27 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule],
+  imports: [ReactiveFormsModule],
   template: `
     <div class="profile-card">
       <h1 class="heading">{{profileCard}}</h1>
       <div class="values">
-        <div><strong>Name: </strong> {{name}}</div>
-        <div><strong>Age: </strong>{{age}}</div>
+        <div><strong>Name: </strong> {{profileForm.value.name}}</div>
+        <div><strong>Age: </strong>{{profileForm.value.age}}</div>
         <div>
           <p>
-            <strong>Presentation: </strong>{{presentation}}
+            <strong>Presentation: </strong>{{profileForm.value.presentation}}
           </p>
         </div>
       </div>
-      <div class="data-form">
+      <form [formGroup]="profileForm" class="data-form">
         <h4>Update Profile</h4>
-        <input type="text" [(ngModel)]="name" placeholder="Your name">
-        <input type="number" [(ngModel)]="age" placeholder="Your age">
-        <input type="text" [(ngModel)]="presentation" placeholder="Tell us a bit about yourselve">
-      </div>
+        <input type="text" formControlName='name' placeholder="Your name">
+        <input type="number" formControlName='age' placeholder="Your age">
+        <input type="text" formControlName='presentation'  placeholder="Tell us a bit about yourselve">
+      </form>
       <span>🚀 <code>Happy Coding!</code></span>
     </div>
   `,
@@ -63,7 +63,19 @@ import { FormsModule } from '@angular/forms';
 })
 export class AppComponent {
   profileCard = 'Profile Card'
-  name: string = 'leonel kanmogne'
-  age: number = 32
-  presentation: string = 'Fullstack developer (java/angular/react)'
+  // name: string = 'leonel kanmogne'
+  // age: number = 12
+  // presentation: string = 'Fullstack developer (java/angular/react)'
+
+  profileForm = new FormGroup({
+    name: new FormControl<string>('leonel ka'),
+    age: new FormControl<number | undefined>(undefined, { validators: [Validators.nullValidator] }),
+    presentation: new FormControl<string>('Learner...')
+  })
+
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   if (this.age < 1) {
+  //     this.age = 1
+  //   }
+  // }
 }
