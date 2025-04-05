@@ -63,19 +63,11 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class AppComponent {
   profileCard = 'Profile Card'
-  // name: string = 'leonel kanmogne'
-  // age: number = 12
-  // presentation: string = 'Fullstack developer (java/angular/react)'
 
   profileForm = new FormGroup({
-    name: new FormControl<string>('leonel ka'),
-    age: new FormControl<number | undefined>(undefined, { validators: [Validators.nullValidator] }),
-    presentation: new FormControl<string>('Learner...')
+    name: new FormControl<string>('leonel kanmogne'),
+    age: new FormControl<number | undefined>(32, { validators: [Validators.nullValidator] }),
+    presentation: new FormControl<string>('Fullstack developer (java/angular/react)')
   })
 
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   if (this.age < 1) {
-  //     this.age = 1
-  //   }
-  // }
 }
