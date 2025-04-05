@@ -12,6 +12,14 @@ This is a collection of projects made with angular 19. All the projects are list
 - Two way data binding,
 - Interpolation.
 
+### 02 - Simple Todo
+
+#### Topics covered
+
+- Conditional rendering
+- Loop
+- Collect user inputs
+
 
 ## Support
 
